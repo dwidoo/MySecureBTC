@@ -1,0 +1,19 @@
+MYBTCSECURED SOURCE AVAILABLE LICENSE
+
+Copyright (c) 2025 MyBTCSecured . All rights reserved.
+
+1. ACCESS AND AUDIT
+The source code is made available to the public for the sole purpose of security auditing and transparency ("Verify, Don't Trust").
+
+2. RESTRICTIONS
+You are NOT allowed to:
+- Host a public instance of this application.
+- Use this code for any commercial purpose.
+- Remove this license or the copyright headers.
+
+3. PERMISSIONS
+You are allowed to:
+- Download and run this code locally for personal use.
+- Fork this repository to propose security fixes (Pull Requests).
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND.

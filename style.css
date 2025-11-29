@@ -1,0 +1,80 @@
+/* style.css */
+body { font-family: 'Inter', sans-serif; background-color: #0f172a; color: #e2e8f0; }
+
+.glass-panel { 
+    background: rgba(15, 23, 42, 0.98); 
+    backdrop-filter: blur(12px); 
+    border: 1px solid rgba(255, 255, 255, 0.08); 
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+.checkbox-wrapper input:checked + div {
+    border-color: #f7931a;
+    background-color: rgba(247, 147, 26, 0.15);
+    color: white;
+}
+.checkbox-wrapper input:checked + div .check-icon {
+    opacity: 1 !important; 
+    color: #f7931a !important;
+    transform: scale(1.1);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* HEADER SECTION */
+.section-header {
+    background: #1e293b;
+    border-left: 4px solid;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    color: white;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* MATRICE COMPARATIVE */
+.matrix-container {
+    overflow-x: auto;
+    border-radius: 0.75rem;
+    border: 1px solid #334155;
+    background-color: #1e293b;
+}
+.matrix-table { width: 100%; border-collapse: separate; border-spacing: 0; }
+.matrix-table th { 
+    background-color: #0f172a; 
+    color: #94a3b8; 
+    font-size: 0.7rem; 
+    text-transform: uppercase; 
+    padding: 1rem 0.5rem; 
+    text-align: center; 
+    border-bottom: 2px solid #334155;
+    vertical-align: bottom;
+}
+.matrix-table th.th-model { text-align: left; min-width: 140px; position: sticky; left: 0; background-color: #0f172a; z-index: 10; border-right: 1px solid #334155; }
+.matrix-table td { 
+    padding: 1rem 0.5rem; 
+    border-bottom: 1px solid #334155; 
+    text-align: center;
+    vertical-align: middle;
+    background-color: #1e293b;
+}
+.matrix-table tr:hover td { background-color: #273548; }
+.matrix-table td.td-model { 
+    text-align: left; 
+    position: sticky; 
+    left: 0; 
+    background-color: #1e293b; 
+    border-right: 1px solid #334155;
+    z-index: 10;
+}
+.matrix-table tr:last-child td { border-bottom: none; }
+
+.fade-in { animation: fadeIn 0.4s ease-out; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+.hidden { display: none !important; }

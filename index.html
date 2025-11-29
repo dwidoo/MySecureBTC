@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="page-title">Chargement...</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        // GATEKEEPER BETA (Protection simple pour Vercel Gratuit)
+        (function() {
+            // Si l'utilisateur a déjà le pass, on ne fait rien
+            if (localStorage.getItem('beta_access') === 'granted') return;
+
+            // Sinon on demande
+            var pwd = prompt("🔐 Accès Beta Privée\nEntrez le code d'accès :");
+
+            // Mot de passe : BTC2025 (Tu donneras ce code sur Discord)
+            if (pwd === 'chauffagiste') { 
+                localStorage.setItem('beta_access', 'granted');
+            } else {
+                // Si faux, on efface le corps de la page et on redirige
+                document.write('<style>body{display:none}</style>'); 
+                window.location.href = "https://google.com"; 
+            }
+        })();
+    </script>
+</head>
+<body class="min-h-screen flex flex-col bg-slate-900 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]">
+
+    <nav class="w-full p-6 flex justify-between items-center max-w-5xl mx-auto">
+        <div id="nav-brand" class="text-2xl font-bold text-white tracking-tighter cursor-pointer" onclick="location.reload()">
+            </div>
+        
+        <div class="text-xs text-slate-500 font-mono flex items-center gap-2 border border-slate-700 px-3 py-1 rounded-full bg-slate-900/80">
+            <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+            SECURE SESSION
+        </div>
+    </nav>
+
+    <main class="flex-grow flex items-start md:items-center justify-center p-4 pt-8 md:pt-0">
+        <div id="app-container" class="w-full max-w-4xl">
+            <div id="intro-panel" class="glass-panel rounded-3xl p-10 md:p-16 shadow-2xl fade-in relative overflow-hidden">
+                <div class="absolute -top-20 -right-20 w-64 h-64 bg-blue-600 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob"></div>
+
+                <h1 class="text-4xl md:text-5xl font-bold mb-8 text-white leading-tight">
+                    <span id="txt-hero-1"></span><br>
+                    <span id="txt-hero-2" class="text-transparent bg-clip-text bg-gradient-to-r from-[#f7931a] to-yellow-500"></span>
+                </h1>
+                
+                <p id="txt-hero-desc" class="text-lg text-slate-300 mb-12 leading-relaxed max-w-2xl">
+                    </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-4">
+                    <div class="bg-slate-800/80 p-6 rounded-2xl border border-slate-700/50 hover:border-slate-500 transition-all shadow-lg">
+                        <i class="fa-solid fa-user-secret text-[#f7931a] text-3xl mb-4"></i>
+                        <div id="txt-block-1-title" class="font-bold text-white text-lg mb-2"></div>
+                        <p id="txt-block-1-desc" class="text-sm text-slate-400 leading-relaxed"></p>
+                    </div>
+                    
+                    <div class="bg-slate-800/80 p-6 rounded-2xl border border-slate-700/50 hover:border-slate-500 transition-all shadow-lg">
+                        <i class="fa-solid fa-scale-balanced text-blue-500 text-3xl mb-4"></i>
+                        <div id="txt-block-2-title" class="font-bold text-white text-lg mb-2"></div>
+                        <p id="txt-block-2-desc" class="text-sm text-slate-400 leading-relaxed"></p>
+                    </div>
+                    
+                    <div class="bg-slate-800/80 p-6 rounded-2xl border border-slate-700/50 hover:border-slate-500 transition-all shadow-lg">
+                        <i class="fa-solid fa-layer-group text-green-500 text-3xl mb-4"></i>
+                        <div id="txt-block-3-title" class="font-bold text-white text-lg mb-2"></div>
+                        <p id="txt-block-3-desc" class="text-sm text-slate-400 leading-relaxed"></p>
+                    </div>
+                </div>
+
+                <div class="mt-12 flex justify-center "> 
+                    <button id="start-btn" onclick="openLegalModal()" class="w-full md:w-auto bg-[#f7931a] hover:bg-[#e0820b] text-white font-bold py-5 px-12 rounded-xl transition-all shadow-xl shadow-orange-900/20 flex items-center justify-center text-lg transform hover:-translate-y-1">
+                        <span id="txt-btn-start">Démarrer</span> <i class="fa-solid fa-arrow-right ml-3"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div id="legal-modal" class="hidden fixed inset-0 z-[100] flex items-center justify-center bg-black/90 backdrop-blur-sm p-4 fade-in">
+            
+                <div class="bg-slate-900 border border-slate-700 rounded-xl max-w-lg w-full p-6 shadow-2xl relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-orange-500 to-red-600"></div>
+                    
+                    <h2 class="text-xl font-bold text-white mb-4 flex items-center">
+                        <i class="fa-solid fa-scale-balanced text-orange-500 mr-3"></i> 
+                        <span id="legal-title"></span> </h2>
+                    
+                    <div class="text-sm text-slate-300 space-y-3 mb-6 h-60 overflow-y-auto pr-2 border border-slate-800 rounded p-3 bg-slate-800/50 text-justify leading-relaxed custom-scrollbar">
+                        <p id="legal-p1"></p>
+                        <p id="legal-p2"></p>
+                        <p id="legal-p3"></p>
+                        <p id="legal-p4"></p>
+                    </div>
+
+                    <label class="flex items-start gap-3 cursor-pointer group p-3 rounded-lg border border-transparent hover:bg-slate-800 hover:border-slate-700 transition-all mb-4 select-none">
+                        <div class="relative flex items-center mt-0.5">
+                            <input type="checkbox" id="legal-check" class="peer sr-only">
+                            <div class="w-5 h-5 border-2 border-slate-500 rounded peer-checked:bg-orange-600 peer-checked:border-orange-600 transition-all"></div>
+                            <i class="fa-solid fa-check text-white text-xs absolute top-1 left-1 opacity-0 peer-checked:opacity-100 transition-opacity"></i>
+                        </div>
+                        <span id="legal-checkbox-label" class="text-sm text-slate-400 group-hover:text-white"></span> </label>
+
+                    <button id="legal-btn" disabled onclick="acceptLegalAndStart()" class="w-full bg-slate-700 text-slate-500 font-bold py-3 rounded-lg cursor-not-allowed transition-all uppercase tracking-wide text-xs">
+                        <span id="legal-btn-txt">Accéder</span> </button>
+                </div>
+            </div>
+
+            <div id="quiz-panel" class="hidden glass-panel rounded-2xl p-8 md:p-10 shadow-2xl fade-in min-h-[500px] flex flex-col">
+                <div class="w-full bg-slate-800 h-1.5 rounded-full mb-8 overflow-hidden">
+                    <div id="progress-bar" class="bg-[#f7931a] h-full rounded-full transition-all duration-500" style="width: 5%"></div>
+                </div>
+                <div id="question-container" class="flex-grow"></div>
+                <div class="mt-8 pt-6 border-t border-slate-700/50 flex justify-between items-center text-xs text-slate-500">
+                    <button id="btn-prev" onclick="prevQuestion()" class="hover:text-white flex items-center transition-colors hidden">
+                        <i class="fa-solid fa-arrow-left mr-2"></i> Retour
+                    </button>
+                    <span>MyBTCSecured Engine V1.6</span>
+                </div>
+            </div>
+
+            <div id="loading-panel" class="hidden text-center py-20 fade-in">
+                <div class="relative inline-flex mb-8">
+                    <div class="w-16 h-16 bg-orange-500 rounded-full animate-ping opacity-20 absolute"></div>
+                    <div class="w-16 h-16 bg-transparent border-4 border-t-orange-500 border-r-transparent border-b-orange-500 border-l-transparent rounded-full animate-spin relative z-10"></div>
+                </div>
+                <h2 class="text-2xl font-bold text-white mb-2">Construction du protocole de sécurité...</h2>
+                <p class="text-slate-400 font-mono text-sm" id="load-text">Initialisation...</p>
+            </div>
+
+            <div id="result-panel" class="hidden fade-in pb-20">
+                <div class="text-center mb-10">
+                    <div class="inline-block px-3 py-1 rounded-full bg-green-900/30 border border-green-500/30 text-green-400 text-xs font-bold mb-4 tracking-wider">
+                        <i class="fa-solid fa-check mr-1"></i> PROTOCOLE VALIDÉ
+                    </div>
+                    <h2 class="text-3xl font-bold text-white mb-2" id="res-main-title">Votre Dispositif de Sécurité</h2>
+                </div>
+                <div id="result-content" class="space-y-8"></div>
+                <div class="mt-16 text-center border-t border-slate-800 pt-8">
+                     <button onclick="location.reload()" class="text-slate-500 hover:text-white text-sm transition-colors">
+                        <i class="fa-solid fa-rotate-right mr-2"></i> Recommencer
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <script src="knowledge_base.js"></script> <script src="engine.js"></script>         ```
+
+</body>
+</html>
