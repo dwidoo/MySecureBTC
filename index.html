@@ -10,116 +10,128 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     
     <script>
-        // GATEKEEPER BETA (Protection simple pour Vercel Gratuit)
+        // GATEKEEPER BETA (Protection simple existante)
         (function() {
-            // Si l'utilisateur a déjà le pass, on ne fait rien
             if (localStorage.getItem('beta_access') === 'granted') return;
-
-            // Sinon on demande
             var pwd = prompt("🔐 Accès Beta Privée\nEntrez le code d'accès :");
-
-            // Mot de passe : BTC2025 (Tu donneras ce code sur Discord)
             if (pwd === 'chauffagiste') { 
                 localStorage.setItem('beta_access', 'granted');
             } else {
-                // Si faux, on efface le corps de la page et on redirige
                 document.write('<style>body{display:none}</style>'); 
                 window.location.href = "https://google.com"; 
             }
         })();
     </script>
 </head>
-<body class="min-h-screen flex flex-col bg-slate-900 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]">
+<body class="min-h-screen flex flex-col bg-slate-900 text-slate-200 font-sans">
 
-    <nav class="w-full p-6 flex justify-between items-center max-w-5xl mx-auto">
-        <div id="nav-brand" class="text-2xl font-bold text-white tracking-tighter cursor-pointer" onclick="location.reload()">
+    <nav class="w-full p-4 md:p-6 flex justify-between items-center max-w-5xl mx-auto z-50">
+        <div id="nav-brand" class="text-xl md:text-2xl font-bold text-white tracking-tighter cursor-pointer select-none" onclick="location.reload()">
             </div>
         
-        <div class="text-xs text-slate-500 font-mono flex items-center gap-2 border border-slate-700 px-3 py-1 rounded-full bg-slate-900/80">
-            <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
-            SECURE SESSION
+        <div id="net-status" class="text-xs font-mono flex items-center gap-2 border border-slate-700 px-3 py-1.5 rounded-full bg-slate-800 transition-colors">
+            <span id="net-dot" class="w-2 h-2 rounded-full bg-green-500"></span>
+            <span id="net-text" class="font-semibold text-slate-300">ONLINE</span>
         </div>
     </nav>
 
     <main class="flex-grow flex items-start md:items-center justify-center p-4 pt-8 md:pt-0">
-        <div id="app-container" class="w-full max-w-4xl">
-            <div id="intro-panel" class="glass-panel rounded-3xl p-10 md:p-16 shadow-2xl fade-in relative overflow-hidden">
-                <div class="absolute -top-20 -right-20 w-64 h-64 bg-blue-600 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob"></div>
+        
+        <div id="app-container" class="w-full max-w-4xl relative">
+            
+            <div id="intro-panel" class="content-panel rounded-2xl p-8 md:p-12 shadow-2xl fade-in relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-64 h-64 bg-blue-600/10 rounded-full blur-3xl -mr-16 -mt-16 pointer-events-none"></div>
 
-                <h1 class="text-4xl md:text-5xl font-bold mb-8 text-white leading-tight">
-                    <span id="txt-hero-1"></span><br>
-                    <span id="txt-hero-2" class="text-transparent bg-clip-text bg-gradient-to-r from-[#f7931a] to-yellow-500"></span>
-                </h1>
-                
-                <p id="txt-hero-desc" class="text-lg text-slate-300 mb-12 leading-relaxed max-w-2xl">
-                    </p>
-
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-4">
-                    <div class="bg-slate-800/80 p-6 rounded-2xl border border-slate-700/50 hover:border-slate-500 transition-all shadow-lg">
-                        <i class="fa-solid fa-user-secret text-[#f7931a] text-3xl mb-4"></i>
-                        <div id="txt-block-1-title" class="font-bold text-white text-lg mb-2"></div>
-                        <p id="txt-block-1-desc" class="text-sm text-slate-400 leading-relaxed"></p>
-                    </div>
+                <div class="relative z-10">
+                    <h1 class="text-3xl md:text-5xl font-bold mb-6 text-white leading-tight">
+                        <span id="txt-hero-1"></span><br>
+                        <span id="txt-hero-2" class="text-transparent bg-clip-text bg-gradient-to-r from-[#f7931a] to-yellow-500"></span>
+                    </h1>
                     
-                    <div class="bg-slate-800/80 p-6 rounded-2xl border border-slate-700/50 hover:border-slate-500 transition-all shadow-lg">
-                        <i class="fa-solid fa-scale-balanced text-blue-500 text-3xl mb-4"></i>
-                        <div id="txt-block-2-title" class="font-bold text-white text-lg mb-2"></div>
-                        <p id="txt-block-2-desc" class="text-sm text-slate-400 leading-relaxed"></p>
-                    </div>
-                    
-                    <div class="bg-slate-800/80 p-6 rounded-2xl border border-slate-700/50 hover:border-slate-500 transition-all shadow-lg">
-                        <i class="fa-solid fa-layer-group text-green-500 text-3xl mb-4"></i>
-                        <div id="txt-block-3-title" class="font-bold text-white text-lg mb-2"></div>
-                        <p id="txt-block-3-desc" class="text-sm text-slate-400 leading-relaxed"></p>
-                    </div>
-                </div>
+                    <p id="txt-hero-desc" class="text-lg text-slate-300 mb-10 leading-relaxed max-w-2xl"></p>
 
-                <div class="mt-12 flex justify-center "> 
-                    <button id="start-btn" onclick="openLegalModal()" class="w-full md:w-auto bg-[#f7931a] hover:bg-[#e0820b] text-white font-bold py-5 px-12 rounded-xl transition-all shadow-xl shadow-orange-900/20 flex items-center justify-center text-lg transform hover:-translate-y-1">
-                        <span id="txt-btn-start">Démarrer</span> <i class="fa-solid fa-arrow-right ml-3"></i>
-                    </button>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+                        <div class="bg-slate-800 p-5 rounded-xl border border-slate-700">
+                            <i class="fa-solid fa-shield-halved text-[#f7931a] text-2xl mb-3"></i>
+                            <div id="txt-block-1-title" class="font-bold text-white text-base mb-1"></div>
+                            <p id="txt-block-1-desc" class="text-xs text-slate-400 leading-relaxed"></p>
+                        </div>
+                        
+                        <div class="bg-slate-800 p-5 rounded-xl border border-slate-700">
+                            <i class="fa-solid fa-microchip text-blue-500 text-2xl mb-3"></i>
+                            <div id="txt-block-2-title" class="font-bold text-white text-base mb-1"></div>
+                            <p id="txt-block-2-desc" class="text-xs text-slate-400 leading-relaxed"></p>
+                        </div>
+                        
+                        <div class="bg-slate-800 p-5 rounded-xl border border-slate-700">
+                            <i class="fa-brands fa-github text-white text-2xl mb-3"></i>
+                            <div id="txt-block-3-title" class="font-bold text-white text-base mb-1"></div>
+                            <p id="txt-block-3-desc" class="text-xs text-slate-400 leading-relaxed"></p>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center"> 
+                        <button id="start-btn" onclick="openLegalModal()" class="bg-[#f7931a] hover:bg-[#d67b0f] text-white font-bold py-4 px-8 rounded-xl transition-all shadow-lg flex items-center justify-center text-lg">
+                            <span id="txt-btn-start">Démarrer</span> 
+                            <i class="fa-solid fa-arrow-right ml-3"></i>
+                        </button>
+                    </div>
                 </div>
             </div>
 
-            <div id="legal-modal" class="hidden fixed inset-0 z-[100] flex items-center justify-center bg-black/90 backdrop-blur-sm p-4 fade-in">
-            
-                <div class="bg-slate-900 border border-slate-700 rounded-xl max-w-lg w-full p-6 shadow-2xl relative overflow-hidden">
-                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-orange-500 to-red-600"></div>
-                    
+            <div id="legal-modal" class="hidden fixed inset-0 z-[100] flex items-center justify-center bg-slate-900/95 p-4 fade-in">
+                <div class="bg-slate-800 border border-slate-600 rounded-xl max-w-lg w-full p-6 shadow-2xl relative">
                     <h2 class="text-xl font-bold text-white mb-4 flex items-center">
-                        <i class="fa-solid fa-scale-balanced text-orange-500 mr-3"></i> 
-                        <span id="legal-title"></span> </h2>
+                        <i class="fa-solid fa-scale-balanced text-[#f7931a] mr-3"></i> 
+                        <span id="legal-title"></span> 
+                    </h2>
                     
-                    <div class="text-sm text-slate-300 space-y-3 mb-6 h-60 overflow-y-auto pr-2 border border-slate-800 rounded p-3 bg-slate-800/50 text-justify leading-relaxed custom-scrollbar">
-                        <p id="legal-p1"></p>
-                        <p id="legal-p2"></p>
-                        <p id="legal-p3"></p>
-                        <p id="legal-p4"></p>
+                    <div class="text-sm text-slate-300 space-y-3 mb-6 h-48 overflow-y-auto pr-2 border border-slate-700 bg-slate-900 rounded p-4 text-justify leading-relaxed custom-scrollbar">
+                        <p id="legal-p1"></p><p id="legal-p2"></p><p id="legal-p3"></p><p id="legal-p4"></p>
                     </div>
 
-                    <label class="flex items-start gap-3 cursor-pointer group p-3 rounded-lg border border-transparent hover:bg-slate-800 hover:border-slate-700 transition-all mb-4 select-none">
+                    <label class="flex items-start gap-3 cursor-pointer group p-3 rounded-lg hover:bg-slate-700 transition-all mb-2 select-none border border-transparent hover:border-slate-600">
                         <div class="relative flex items-center mt-0.5">
-                            <input type="checkbox" id="legal-check" class="peer sr-only">
-                            <div class="w-5 h-5 border-2 border-slate-500 rounded peer-checked:bg-orange-600 peer-checked:border-orange-600 transition-all"></div>
+                            <input type="checkbox" id="check-offline" class="peer sr-only">
+                            <div class="w-5 h-5 border-2 border-slate-500 rounded peer-checked:bg-[#f7931a] peer-checked:border-[#f7931a] transition-all"></div>
                             <i class="fa-solid fa-check text-white text-xs absolute top-1 left-1 opacity-0 peer-checked:opacity-100 transition-opacity"></i>
                         </div>
-                        <span id="legal-checkbox-label" class="text-sm text-slate-400 group-hover:text-white"></span> </label>
+                        <div class="flex-grow">
+                            <span id="lbl-check-offline" class="text-sm text-slate-300 group-hover:text-white block mb-1"></span>
+                            <span id="modal-net-status" class="inline-flex items-center gap-2 text-[10px] font-mono uppercase px-2 py-0.5 rounded bg-slate-900 border border-slate-700 text-slate-500">
+                                <span class="w-1.5 h-1.5 rounded-full bg-slate-500"></span>
+                                <span>...</span>
+                            </span>
+                        </div>
+                    </label>
 
-                    <button id="legal-btn" disabled onclick="acceptLegalAndStart()" class="w-full bg-slate-700 text-slate-500 font-bold py-3 rounded-lg cursor-not-allowed transition-all uppercase tracking-wide text-xs">
-                        <span id="legal-btn-txt">Accéder</span> </button>
+                    <label class="flex items-start gap-3 cursor-pointer group p-3 rounded-lg hover:bg-slate-700 transition-all mb-4 select-none border border-transparent hover:border-slate-600">
+                        <div class="relative flex items-center mt-0.5">
+                            <input type="checkbox" id="check-terms" class="peer sr-only">
+                            <div class="w-5 h-5 border-2 border-slate-500 rounded peer-checked:bg-[#f7931a] peer-checked:border-[#f7931a] transition-all"></div>
+                            <i class="fa-solid fa-check text-white text-xs absolute top-1 left-1 opacity-0 peer-checked:opacity-100 transition-opacity"></i>
+                        </div>
+                        <span id="lbl-check-terms" class="text-sm text-slate-400 group-hover:text-white"></span> 
+                    </label>
+
+                    <div class="flex gap-3">
+                        <button onclick="document.getElementById('legal-modal').classList.add('hidden')" class="w-1/3 bg-slate-700 hover:bg-slate-600 text-slate-300 font-bold py-3 rounded-lg transition-all text-xs">Annuler</button>
+                        <button id="legal-btn" disabled onclick="acceptLegalAndStart()" class="w-2/3 bg-slate-700 text-slate-500 font-bold py-3 rounded-lg cursor-not-allowed transition-all text-xs uppercase shadow-none transform-none"><span id="legal-btn-txt">Accéder</span></button>
+                    </div>
                 </div>
             </div>
 
-            <div id="quiz-panel" class="hidden glass-panel rounded-2xl p-8 md:p-10 shadow-2xl fade-in min-h-[500px] flex flex-col">
-                <div class="w-full bg-slate-800 h-1.5 rounded-full mb-8 overflow-hidden">
+            <div id="quiz-panel" class="hidden content-panel rounded-2xl p-6 md:p-10 shadow-2xl fade-in min-h-[500px] flex flex-col">
+                <div class="w-full bg-slate-700 h-2 rounded-full mb-8 overflow-hidden">
                     <div id="progress-bar" class="bg-[#f7931a] h-full rounded-full transition-all duration-500" style="width: 5%"></div>
                 </div>
                 <div id="question-container" class="flex-grow"></div>
-                <div class="mt-8 pt-6 border-t border-slate-700/50 flex justify-between items-center text-xs text-slate-500">
-                    <button id="btn-prev" onclick="prevQuestion()" class="hover:text-white flex items-center transition-colors hidden">
-                        <i class="fa-solid fa-arrow-left mr-2"></i> Retour
+                
+                <div class="mt-8 pt-6 border-t border-slate-700 flex justify-between items-center text-xs text-slate-500">
+                    <button id="btn-prev" onclick="prevQuestion()" class="hover:text-white flex items-center transition-colors hidden px-3 py-2 rounded hover:bg-slate-800">
+                        <i class="fa-solid fa-arrow-left mr-2"></i> Précédent
                     </button>
-                    <span>MyBTCSecured Engine V1.6</span>
+                    <span>Engine V2.8 (Secure Logic)</span>
                 </div>
             </div>
 
@@ -128,29 +140,90 @@
                     <div class="w-16 h-16 bg-orange-500 rounded-full animate-ping opacity-20 absolute"></div>
                     <div class="w-16 h-16 bg-transparent border-4 border-t-orange-500 border-r-transparent border-b-orange-500 border-l-transparent rounded-full animate-spin relative z-10"></div>
                 </div>
-                <h2 class="text-2xl font-bold text-white mb-2">Construction du protocole de sécurité...</h2>
+                <h2 class="text-2xl font-bold text-white mb-2">Analyse en cours...</h2>
                 <p class="text-slate-400 font-mono text-sm" id="load-text">Initialisation...</p>
             </div>
 
             <div id="result-panel" class="hidden fade-in pb-20">
                 <div class="text-center mb-10">
-                    <div class="inline-block px-3 py-1 rounded-full bg-green-900/30 border border-green-500/30 text-green-400 text-xs font-bold mb-4 tracking-wider">
-                        <i class="fa-solid fa-check mr-1"></i> PROTOCOLE VALIDÉ
+                    <div class="inline-block px-4 py-1.5 rounded-full bg-green-500/10 border border-green-500/20 text-green-400 text-xs font-bold mb-4 tracking-wider">
+                        <i class="fa-solid fa-check mr-2"></i> PROTOCOLE GÉNÉRÉ
                     </div>
                     <h2 class="text-3xl font-bold text-white mb-2" id="res-main-title">Votre Dispositif de Sécurité</h2>
+                    <p class="text-slate-400 text-sm">Voici la configuration recommandée selon vos contraintes.</p>
                 </div>
+                
                 <div id="result-content" class="space-y-8"></div>
-                <div class="mt-16 text-center border-t border-slate-800 pt-8">
-                     <button onclick="location.reload()" class="text-slate-500 hover:text-white text-sm transition-colors">
-                        <i class="fa-solid fa-rotate-right mr-2"></i> Recommencer
+                
+                <div class="mt-16 text-center border-t border-slate-800 pt-8 flex flex-col items-center gap-4">
+                     <button onclick="location.reload()" class="text-slate-400 hover:text-white text-sm transition-colors border border-slate-700 px-6 py-2 rounded hover:bg-slate-800">
+                        <i class="fa-solid fa-rotate-right mr-2"></i> Recommencer l'analyse
                     </button>
+                    <a href="https://github.com/Placeholder/MyBTCSecured" target="_blank" class="text-xs text-slate-600 hover:text-[#f7931a] transition-colors flex items-center gap-2 mt-4">
+                        <i class="fa-brands fa-github"></i> Code Source Public (Audit)
+                    </a>
                 </div>
             </div>
 
         </div>
     </main>
 
-    <script src="knowledge_base.js"></script> <script src="engine.js"></script>         ```
+    <script src="knowledge_base.js"></script> 
+    <script src="engine.js"></script>
+    
+    <script>
+        window.addEventListener('load', () => {
+            // Elements du Menu
+            const dot = document.getElementById('net-dot');
+            const txt = document.getElementById('net-text');
+            const box = document.getElementById('net-status');
+            
+            // Elements de la Modale (Nouveaux)
+            const modalStatus = document.getElementById('modal-net-status');
 
+            function updateNetworkStatus() {
+                const isOnline = navigator.onLine;
+                
+                // Textes (depuis KB si possible, sinon fallback hardcodé ici pour la démo immédiate)
+                // Note: KB n'est dispo que si knowledge_base.js est chargé, on sécurise :
+                const txtOnline = (typeof KB !== 'undefined') ? KB.LANG.fr.status_online : "Connecté";
+                const txtOffline = (typeof KB !== 'undefined') ? KB.LANG.fr.status_offline : "Hors-ligne (Secured)";
+
+                if (isOnline) {
+                    // MENU STATUT : ONLINE
+                    dot.classList.remove('bg-orange-500'); dot.classList.add('bg-green-500');
+                    txt.innerText = "ONLINE";
+                    txt.classList.remove('text-orange-400'); txt.classList.add('text-slate-300');
+                    box.classList.remove('border-orange-500/50'); box.classList.add('border-slate-700');
+
+                    // MODALE STATUT : ONLINE (Gris/Neutre)
+                    if(modalStatus) {
+                        modalStatus.innerHTML = `<span class="w-1.5 h-1.5 rounded-full bg-slate-500"></span> <span>${txtOnline}</span>`;
+                        modalStatus.classList.remove('border-green-500/30', 'text-green-400', 'bg-green-500/10');
+                        modalStatus.classList.add('border-slate-700', 'text-slate-500', 'bg-slate-900');
+                    }
+                } else {
+                    // MENU STATUT : OFFLINE
+                    dot.classList.remove('bg-green-500'); dot.classList.add('bg-orange-500');
+                    txt.innerText = "OFFLINE (SECURE)";
+                    txt.classList.remove('text-slate-300'); txt.classList.add('text-orange-400');
+                    box.classList.remove('border-slate-700'); box.classList.add('border-orange-500/50');
+
+                    // MODALE STATUT : OFFLINE (Vert/Positif car c'est ce qu'on veut)
+                    if(modalStatus) {
+                        modalStatus.innerHTML = `<span class="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></span> <span>${txtOffline}</span>`;
+                        modalStatus.classList.remove('border-slate-700', 'text-slate-500', 'bg-slate-900');
+                        modalStatus.classList.add('border-green-500/30', 'text-green-400', 'bg-green-900/20');
+                    }
+                }
+            }
+
+            window.addEventListener('online', updateNetworkStatus);
+            window.addEventListener('offline', updateNetworkStatus);
+            
+            // Petit délai pour s'assurer que KB est chargé pour les textes
+            setTimeout(updateNetworkStatus, 100); 
+        });
+    </script>
 </body>
 </html>

@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.title = T.app_title_text; // Met à jour l'onglet
     const navBrand = document.getElementById('nav-brand');
     if(navBrand) navBrand.innerHTML = T.app_brand_html; // Met à jour le logo avec les couleurs
-    
+
     // 1. INJECTION DES TRADUCTIONS (I18N)
     // Home
     setText('txt-hero-1', T.hero_title_1);
@@ -74,25 +74,35 @@ document.addEventListener('DOMContentLoaded', () => {
     setHTML('legal-p2', T.legal_p2);
     setHTML('legal-p3', T.legal_p3);
     setHTML('legal-p4', T.legal_p4);
-    setText('legal-checkbox-label', T.legal_checkbox);
+    
+    // Injection des textes des deux checkboxes
+    setText('lbl-check-offline', T.legal_checkbox_offline);
+    setText('lbl-check-terms', T.legal_checkbox_terms);
+    
     setText('legal-btn-txt', T.legal_btn_start);
 
-    const checkLegal = document.getElementById('legal-check');
+// LOGIQUE DE VALIDATION (2 Checkboxes obligatoires)
+    const checkOffline = document.getElementById('check-offline');
+    const checkTerms = document.getElementById('check-terms');
     const btnLegal = document.getElementById('legal-btn');
 
-    if(checkLegal && btnLegal) {
-        checkLegal.addEventListener('change', function() {
-            if(this.checked) {
+    function updateStartButton() {
+        if(checkOffline && checkTerms && btnLegal) {
+            // Les deux doivent être cochées
+            if(checkOffline.checked && checkTerms.checked) {
                 btnLegal.disabled = false;
-                btnLegal.classList.remove('bg-slate-700', 'text-slate-400', 'cursor-not-allowed');
-                btnLegal.classList.add('bg-orange-600', 'text-white', 'cursor-pointer', 'shadow-lg');
+                btnLegal.classList.remove('bg-slate-700', 'text-slate-500', 'cursor-not-allowed');
+                btnLegal.classList.add('bg-[#f7931a]', 'text-white', 'cursor-pointer', 'shadow-lg', 'hover:bg-[#d67b0f]');
             } else {
                 btnLegal.disabled = true;
-                btnLegal.classList.add('bg-slate-700', 'text-slate-400', 'cursor-not-allowed');
-                btnLegal.classList.remove('bg-orange-600', 'text-white', 'cursor-pointer', 'shadow-lg');
+                btnLegal.classList.add('bg-slate-700', 'text-slate-500', 'cursor-not-allowed');
+                btnLegal.classList.remove('bg-[#f7931a]', 'text-white', 'cursor-pointer', 'shadow-lg', 'hover:bg-[#d67b0f]');
             }
-        });
+        }
     }
+
+    if(checkOffline) checkOffline.addEventListener('change', updateStartButton);
+    if(checkTerms) checkTerms.addEventListener('change', updateStartButton);
 });
 
 // Helper pour injecter du texte simple

@@ -1,30 +1,45 @@
 /* style.css */
-body { font-family: 'Inter', sans-serif; background-color: #0f172a; color: #e2e8f0; }
-
-.glass-panel { 
-    background: rgba(15, 23, 42, 0.98); 
-    backdrop-filter: blur(12px); 
-    border: 1px solid rgba(255, 255, 255, 0.08); 
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+body { 
+    font-family: 'Inter', sans-serif; 
+    /* Pattern de fond maintenu pour la texture, mais assombri */
+    background-color: #0f172a; 
+    background-image: url('https://www.transparenttextures.com/patterns/cubes.png');
+    color: #e2e8f0; 
 }
 
+/* Remplacement du Glassmorphism par du Solid Design pour la lisibilité */
+.content-panel { 
+    background-color: #1e293b; /* Slate-800 : Fond solide */
+    border: 1px solid #334155; /* Slate-700 : Bordure subtile */
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+}
+
+/* Custom Scrollbar pour la zone de texte légal */
+.custom-scrollbar::-webkit-scrollbar { width: 6px; }
+.custom-scrollbar::-webkit-scrollbar-track { background: #0f172a; border-radius: 4px; }
+.custom-scrollbar::-webkit-scrollbar-thumb { background: #475569; border-radius: 4px; }
+.custom-scrollbar::-webkit-scrollbar-thumb:hover { background: #64748b; }
+
+/* CHECKBOX STYLING (Q5) */
+/* Amélioration du contraste à l'état sélectionné */
 .checkbox-wrapper input:checked + div {
     border-color: #f7931a;
-    background-color: rgba(247, 147, 26, 0.15);
+    background-color: #2a1b12; /* Fond très sombre teinté d'orange */
     color: white;
 }
 .checkbox-wrapper input:checked + div .check-icon {
     opacity: 1 !important; 
     color: #f7931a !important;
+    background-color: rgba(247, 147, 26, 0.1);
     transform: scale(1.1);
-    background-color: rgba(255, 255, 255, 0.1);
+    border-color: #f7931a;
 }
 
-/* HEADER SECTION */
+/* HEADER SECTION (Résultats) */
 .section-header {
-    background: #1e293b;
+    background: #0f172a; /* Plus sombre que le panneau pour ressortir */
     border-left: 4px solid;
-    padding: 0.75rem 1rem;
+    padding: 1rem;
     border-radius: 0.5rem;
     color: white;
     font-weight: 700;
@@ -35,7 +50,8 @@ body { font-family: 'Inter', sans-serif; background-color: #0f172a; color: #e2e8
     display: flex;
     align-items: center;
     gap: 0.75rem;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    border: 1px solid #334155;
+    border-left-width: 4px;
 }
 
 /* MATRICE COMPARATIVE */
@@ -43,28 +59,40 @@ body { font-family: 'Inter', sans-serif; background-color: #0f172a; color: #e2e8
     overflow-x: auto;
     border-radius: 0.75rem;
     border: 1px solid #334155;
-    background-color: #1e293b;
+    background-color: #0f172a; /* Fond table sombre */
 }
 .matrix-table { width: 100%; border-collapse: separate; border-spacing: 0; }
 .matrix-table th { 
     background-color: #0f172a; 
     color: #94a3b8; 
-    font-size: 0.7rem; 
+    font-size: 0.75rem; 
     text-transform: uppercase; 
     padding: 1rem 0.5rem; 
     text-align: center; 
     border-bottom: 2px solid #334155;
     vertical-align: bottom;
+    font-weight: 600;
 }
-.matrix-table th.th-model { text-align: left; min-width: 140px; position: sticky; left: 0; background-color: #0f172a; z-index: 10; border-right: 1px solid #334155; }
+.matrix-table th.th-model { 
+    text-align: left; 
+    min-width: 140px; 
+    position: sticky; 
+    left: 0; 
+    background-color: #0f172a; 
+    z-index: 10; 
+    border-right: 1px solid #334155;
+    padding-left: 1rem;
+}
 .matrix-table td { 
     padding: 1rem 0.5rem; 
-    border-bottom: 1px solid #334155; 
+    border-bottom: 1px solid #1e293b; 
     text-align: center;
     vertical-align: middle;
-    background-color: #1e293b;
+    background-color: #1e293b; /* Cellules en Slate-800 */
 }
-.matrix-table tr:hover td { background-color: #273548; }
+/* Effet de survol pour aider la lecture */
+.matrix-table tr:hover td { background-color: #334155; }
+
 .matrix-table td.td-model { 
     text-align: left; 
     position: sticky; 
@@ -72,9 +100,13 @@ body { font-family: 'Inter', sans-serif; background-color: #0f172a; color: #e2e8
     background-color: #1e293b; 
     border-right: 1px solid #334155;
     z-index: 10;
+    padding-left: 1rem;
 }
+.matrix-table tr:hover td.td-model { background-color: #334155; }
 .matrix-table tr:last-child td { border-bottom: none; }
 
-.fade-in { animation: fadeIn 0.4s ease-out; }
-@keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+/* ANIMATIONS */
+.fade-in { animation: fadeIn 0.5s ease-out; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
 .hidden { display: none !important; }
