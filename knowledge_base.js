@@ -315,6 +315,8 @@ const KB = {
             don_copy_ln: "Copier Lightning ⚡️",
             don_copy_btc: "Copier Bitcoin ₿",
             don_action_aff: "Ou utilisez les liens ci-dessus pour vos achats : cela finance l'outil sans surcoût.",
+            don_community: "Sinon, donnez de la force gratuitement : partagez le lien à vos amis ou venez me saluer sur X",
+            footer_built: "Conçu par",
         },
 
         en: {
@@ -634,6 +636,8 @@ const KB = {
             don_copy_ln: "Copy Lightning ⚡️",
             don_copy_btc: "Copy Bitcoin ₿",
             don_action_aff: "Or use the links above for your gear: it funds the tool at no extra cost.",
+            don_community: "Otherwise, show some love for free: share the link with friends or say hi on X ",
+            footer_built: "Built by",
 
         }
     },

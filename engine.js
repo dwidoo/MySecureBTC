@@ -855,16 +855,21 @@ function renderResultsUI(arch, archDesc, wallets, metals, warnings, isMultisig) 
 
             ${getProfileSummaryHtml()}
 
-            <div class="mt-16 text-center border-t border-slate-800 pt-8 flex flex-col items-center gap-4">
+            <div class="mt-16 text-center border-t border-slate-800 pt-8 flex flex-col items-center gap-2">
                  
-                <button onclick="location.reload()" class="bg-slate-700 hover:bg-slate-600 text-white text-sm font-bold py-3 px-8 rounded-xl transition-all shadow-lg flex items-center gap-2">
+                <button onclick="location.reload()" class="bg-slate-700 hover:bg-slate-600 text-white text-sm font-bold py-3 px-8 rounded-xl transition-all shadow-lg flex items-center gap-2 mb-4">
                     <i class="fa-solid fa-rotate-right mr-2"></i> ${T.btn_restart}
                 </button>
-                <a href="https://github.com/dwidoo/mybtcsecured" target="_blank" class="text-xs text-slate-600 hover:text-[#f7931a] transition-colors flex items-center gap-2 mt-4">
+
+                <a href="https://github.com/dwidoo/mybtcsecured" target="_blank" class="text-sm text-white hover:text-[#f7931a] transition-colors flex items-center gap-2">
                     <i class="fa-brands fa-github"></i> ${T.footer_github}
                 </a>
                 
+                <div class="text-sm text-white font-mono mt-2">
+                    &copy; 2025 MyBTCSecured • ${T.footer_built} <a href="https://x.com/dwidoo7" target="_blank" class="font-bold hover:text-[#f7931a] transition-colors">@dwidoo7</a>
                 </div>
+                
+            </div>
         `;
 }
 
@@ -1038,6 +1043,7 @@ function getDonationHtml() {
     // VOS ADRESSES
     const lnAddress = "tragicfuel75@walletofsatoshi.com"; 
     const btcAddress = "bc1qzgnj2006q6qmqxwf3h7q4r2zmny6rar3ttzc86"; 
+    const xProfile = "https://x.com/dwidoo7";
 
     return `
         <div class="mt-8 mb-8 p-6 rounded-xl border border-slate-700/50 bg-gradient-to-br from-slate-800 to-slate-900 relative overflow-hidden group">
@@ -1052,10 +1058,18 @@ function getDonationHtml() {
                     <p class="text-slate-300 text-sm mb-3 leading-relaxed">${T.don_text}</p>
                     
                     <p class="text-slate-400 text-sm italic mb-4">${T.don_funny}</p>
-                    
-                    <div class="mt-4 text-sm text-slate-400 flex items-center justify-center xl:justify-start gap-1">
-                        <i class="fa-solid fa-cart-shopping"></i> ${T.don_action_aff}
+
+                    <div class="mt-6 pt-4 border-t border-slate-700/50">
+                        <p class="text-slate-300 text-sm leading-relaxed">
+                            <i class="fa-regular fa-heart text-red-400 mr-1"></i> ${T.don_community} 
+                            <a href="${xProfile}" target="_blank" class="font-bold text-[#f7931a] hover:text-white transition-colors group/x ml-1">
+                                <i class="fa-brands fa-x-twitter mr-1"></i>@dwidoo7
+                                <i class="fa-solid fa-arrow-right -rotate-45 text-[10px] opacity-0 group-hover/x:opacity-100 transition-all ml-1"></i>
+                            </a>
+                        </p>
                     </div>
+
+
                 </div>
 
                 <div class="flex flex-col sm:flex-row gap-6">
