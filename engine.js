@@ -459,7 +459,7 @@ function calculateResults() {
         } else if (skill === 'beginner') {
             // Beginner Tier 3 : On reste en Passphrase mais on éduque
             archTitle = T.arch_passphrase;
-            archDesc = T.arch_passphrase_desc + " <strong>Conseil : Envisagez le Multisig Assisté (Nunchuk/Casa) pour ce niveau de patrimoine.</strong>";
+            archDesc = T.arch_passphrase_desc + " " + T.note_tier3_beginner;
         }
     }
     // Cas spécifiques qui surchargent (Legacy ou Menace spécifique)
@@ -698,7 +698,7 @@ function renderResultsUI(arch, archDesc, wallets, metals, warnings, isMultisig) 
     // --- HTML GENERATION ---
     let matrixHtml = '';
         if (wallets.length === 0) {
-            matrixHtml = '<div class="text-red-400 p-4 border border-red-500 rounded bg-slate-800">Aucun résultat parfait.</div>';
+            matrixHtml = '<div class="text-red-400 p-4 border border-red-500 rounded bg-slate-800">${T.err_no_result}</div>';
         } else {
             let thead = `<th class="th-model">${T.matrix_model}</th>` + cols.map(c => `<th><div class="flex flex-col items-center gap-1"><i class="fa-solid ${c.icon} text-slate-500 text-lg"></i><span>${c.lbl}</span></div></th>`).join('');
             
@@ -836,7 +836,7 @@ function renderResultsUI(arch, archDesc, wallets, metals, warnings, isMultisig) 
                             ${answers.q1 === '3' && !(answers.q5 || []).includes('opt_fire_ext') ? `
                                 <div class="mt-2 text-xs text-amber-400 flex items-start gap-1.5 leading-tight">
                                     <i class="fa-solid fa-circle-info mt-0.5 text-amber-500"></i>
-                                    <span>Patrimoine vital → priorité aux métaux haute résistance (recommandation 2025)</span>
+                                    <span>${T.metal_vital_warning}</span>
                                 </div>
                             ` : ''}
                         </div>
@@ -879,6 +879,7 @@ function showLazyRichExit() {
     
     const summary = getProfileSummaryHtml(); 
     
+    // On ajoute getDonationHtml() et le bloc footer complet
     document.getElementById('result-content').innerHTML = `
         <div class="text-center p-6 md:p-10 max-w-3xl mx-auto">
             <i class="fa-solid fa-handshake-angle text-5xl md:text-6xl text-blue-500 mb-6"></i>
@@ -912,7 +913,23 @@ function showLazyRichExit() {
                 </div>
             </div>
             
-            ${summary}
+            ${getDonationHtml()} ${summary}
+
+            <div class="mt-16 text-center border-t border-slate-800 pt-8 flex flex-col items-center gap-2">
+                 
+                <button onclick="location.reload()" class="bg-slate-700 hover:bg-slate-600 text-white text-sm font-bold py-3 px-8 rounded-xl transition-all shadow-lg flex items-center gap-2 mb-4">
+                    <i class="fa-solid fa-rotate-right mr-2"></i> ${T.btn_restart}
+                </button>
+
+                <a href="https://github.com/dwidoo/mybtcsecured" target="_blank" class="text-sm text-white hover:text-[#f7931a] transition-colors flex items-center gap-2">
+                    <i class="fa-brands fa-github"></i> ${T.footer_github}
+                </a>
+                
+                <div class="text-sm text-white font-mono mt-2">
+                    &copy; 2025 MyBTCSecured • ${T.footer_built} <a href="https://x.com/dwidoo7" target="_blank" class="font-bold hover:text-[#f7931a] transition-colors">@dwidoo7</a>
+                </div>
+                
+            </div>
         </div>
     `;
 }

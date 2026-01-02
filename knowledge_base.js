@@ -92,8 +92,12 @@ const KB = {
 
             warn_shamir: "Note : Le standard Shamir (SLIP-39) restreint le choix de matériel compatible.",
             warn_passphrase: "Point d'attention : Si vous oubliez la Passphrase, les fonds du portefeuille secret sont perdus à jamais.",
-            
-            exit_lazy: "Recommandation : Garde Collaborative",
+            note_multisig_solo: "(Possible en solo : 3 clés en lieux différents).",
+            note_tier3_beginner: "<strong>Conseil : Envisagez le Multisig Assisté (Nunchuk/Casa) pour ce niveau de patrimoine.</strong>",
+            metal_vital_warning: "Patrimoine vital → priorité aux métaux haute résistance (recommandation 2025)",
+            err_no_result: "Aucun résultat parfait trouvé pour ces critères.",
+
+            exit_lazy: "Recommandation : Conservation Collaborative",
             exit_lazy_desc: "Au vu de l'importance du patrimoine et de votre souhait d'assistance, la gestion solo présente un risque. La garde collaborative permet d'avoir un tiers de sécurité.",
             exit_lazy_sol: "Solutions Recommandées",
 
@@ -434,6 +438,10 @@ const KB = {
 
             warn_shamir: "Note: The Shamir standard (SLIP-39) restricts the choice of compatible hardware.",
             warn_passphrase: "Caution: If you forget the Passphrase, funds in the secret wallet are lost forever.",
+            note_multisig_solo: "(Possible in solo: 3 keys in different locations).",
+            note_tier3_beginner: "<strong>Advice: Consider Assisted Multisig (Nunchuk/Casa) for this wealth level.</strong>",
+            metal_vital_warning: "Life savings → priority to high-resistance metals (2025 recommendation)",
+            err_no_result: "No perfect match found for these criteria.",
             
             exit_lazy: "Recommendation: Collaborative Custody",
             exit_lazy_desc: "Given the importance of the assets and your wish for assistance, solo management presents a risk. Collaborative custody provides a security partner.",
