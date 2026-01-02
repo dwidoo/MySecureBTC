@@ -1041,8 +1041,8 @@ function updateNetworkStatus() {
 
 function getDonationHtml() {
     // VOS ADRESSES
-    const lnAddress = "tragicfuel75@walletofsatoshi.com"; 
-    const btcAddress = "bc1qzgnj2006q6qmqxwf3h7q4r2zmny6rar3ttzc86"; 
+    const lnAddress = "mysecurebtc@blink.sv"; 
+    const btcAddress = "bc1qhfdmeshwsda6rc66gu3x6njpsgqp3avdkcm2ec"; 
     const xProfile = "https://x.com/dwidoo7";
 
     return `
@@ -1076,7 +1076,7 @@ function getDonationHtml() {
                     
                     <div class="flex flex-col items-center gap-3">
                         <div class="bg-white p-2 rounded-lg shadow-lg w-48 h-48 flex items-center justify-center">
-                            <img src="qr-lightning-MySecureBTC.png" alt="Lightning QR" class="w-full h-full object-contain">
+                            <img src="qr-lightning-MySecureBTC.jpeg" alt="Lightning QR" class="w-full h-full object-contain">
                         </div>
                         <button onclick="handleCopy(this, '${lnAddress}')" class="text-xs bg-yellow-500/10 hover:bg-yellow-500/20 text-yellow-500 border border-yellow-500/30 font-bold py-2 px-4 rounded transition-all flex items-center gap-2">
                             <i class="fa-solid fa-bolt"></i> ${T.don_copy_ln}
