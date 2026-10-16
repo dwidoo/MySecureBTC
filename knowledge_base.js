@@ -248,7 +248,7 @@ const KB = {
             desc_bitkey: "Simplicité absolue. Multisig assisté.",
             desc_trezor_safe5: "L'expérience tactile 100% Open Source.",
             desc_bitbox02: "Discrète, Suisse, redoutable d'efficacité.",
-            desc_jade: "Sécurité AirGap accessible via QR Code.",
+            desc_jade_core: "Open source, Bluetooth. Sans caméra : ni QR ni AirGap.",
             desc_keystone3: "Expérience Smartphone 100% AirGap.",
             desc_passport: "Design Premium Bitcoin-only.",
             desc_trezor_safe3: "Entrée de gamme robuste.",
@@ -575,7 +575,7 @@ const KB = {
             desc_bitkey: "Absolute simplicity. Assisted multisig.",
             desc_trezor_safe5: "The 100% Open Source tactile experience.",
             desc_bitbox02: "Discreet, Swiss, frighteningly efficient.",
-            desc_jade: "AirGap security accessible via QR Code.",
+            desc_jade_core: "Open source, Bluetooth. No camera: no QR, no AirGap.",
             desc_keystone3: "100% AirGap Smartphone experience.",
             desc_passport: "Premium Bitcoin-only design.",
             desc_trezor_safe3: "Robust entry-level choice.",
@@ -653,7 +653,7 @@ const KB = {
         { 
             id: 'trezor_safe7', name: 'Trezor Safe 7', 
             features: ['opensource', 'tactile', 'shamir', 'ble', 'btc_only_opt', 'secure_element', 'tor', 'nfc', 'dice', 'usb_c'], 
-            screen: 'large', skill: 'beginner', btc_only: true, price: 219,
+            screen: 'large', skill: 'beginner', btc_only: true, price: 249,
             desc: "Standard 2025. Haptic Touch & Puce Transparente."
         },
         { 
@@ -670,14 +670,14 @@ const KB = {
         },
         { 
             id: 'bitkey', name: 'Bitkey', 
-            features: ['ble', 'nfc', 'simple', 'multisig_assist', 'secure_element', 'btc_only', 'fingerprint', 'usb_c'], 
-            screen: 'none', skill: 'beginner', btc_only: true, price: 150,
+            features: ['nfc', 'simple', 'multisig_assist', 'secure_element', 'btc_only', 'fingerprint', 'usb_c'], 
+            screen: 'small', skill: 'beginner', btc_only: true, price: 230,
             desc: "Simplicité absolue. Multisig assisté."
         },
         { 
             id: 'trezor_safe5', name: 'Trezor Safe 5', 
             features: ['opensource', 'large_screen', 'tactile', 'shamir', 'dice', 'btc_only_opt', 'secure_element', 'tor', 'nfc', 'usb_c'], 
-            screen: 'large', skill: 'beginner', btc_only: true, price: 169,
+            screen: 'large', skill: 'beginner', btc_only: true, price: 129,
             desc: "L'expérience tactile 100% Open Source."
         },
         { 
@@ -687,10 +687,10 @@ const KB = {
             desc: "Discrète, Suisse, redoutable d'efficacité."
         },
         { 
-            id: 'jade', name: 'Blockstream Jade', 
-            features: ['airgap', 'camera', 'btc_only', 'opensource', 'tor', 'qr', 'ble', 'virtual_se', 'usb_c'], 
-            screen: 'mid', skill: 'intermediate', btc_only: true, price: 69,
-            desc: "Sécurité AirGap accessible via QR Code."
+            id: 'jade_core', name: 'Blockstream Jade Core', 
+            features: ['btc_only', 'opensource', 'tor', 'ble', 'virtual_se', 'usb_c'], 
+            screen: 'mid', skill: 'intermediate', btc_only: true, price: 99,
+            desc: "Open source, Bluetooth. Sans caméra : ni QR ni AirGap."
         },
         { 
             id: 'keystone3', name: 'Keystone 3 Pro', 
@@ -707,7 +707,7 @@ const KB = {
         { 
             id: 'trezor_safe3', name: 'Trezor Safe 3', 
             features: ['opensource', 'secure_element', 'shamir', 'btc_only_opt', 'tor', 'usb_c'], 
-            screen: 'small', skill: 'beginner', btc_only: true, price: 79,
+            screen: 'small', skill: 'beginner', btc_only: true, price: 59,
             desc: "Entrée de gamme robuste."
         },
         { 
@@ -725,7 +725,7 @@ const KB = {
         { 
             id: "tangem", name: "Tangem Wallet (card/ring)", 
             features: ["secure_element", "nfc", "no_seed_option", "multicard_backup", "waterproof", "no_screen"], 
-            screen: "none", skill: "beginner", btc_only: false, price: 60, 
+            screen: "none", skill: "beginner", btc_only: false, price: 70, 
             desc: "Format carte NFC, backup multi-cartes, EAL6+."
         },
         { 
@@ -761,13 +761,13 @@ const KB = {
         {
             id: 'jade_plus', name: 'Blockstream Jade Plus',
             features: ['airgap', 'camera', 'btc_only', 'opensource', 'qr', 'virtual_se', 'tor', 'dice', 'ble', 'usb_c'], 
-            screen: 'large', skill: 'intermediate', btc_only: true, price: 149,
+            screen: 'large', skill: 'intermediate', btc_only: true, price: 170,
             desc: "Version Premium : écran IPS plus grand et meilleure caméra."
         },
         {
             id: 'passport_prime', name: 'Foundation Passport Prime',
             features: ['airgap', 'tactile', 'design', 'btc_only', 'opensource', 'secure_element', 'camera', 'qr', 'usb_c'],
-            screen: 'large', skill: 'intermediate', btc_only: true, price: 299,
+            screen: 'large', skill: 'intermediate', btc_only: true, price: 384,
             desc: "Le 'Blackberry' du Bitcoin devient tactile. Finition luxe."
         },
         {
@@ -779,7 +779,7 @@ const KB = {
         {
             id: 'tangem_ring', name: 'Tangem Ring',
             features: ['nfc', 'wearable', 'waterproof', 'secure_element', 'no_screen', 'no_seed_option', 'multicard_backup'],
-            screen: 'none', skill: 'beginner', btc_only: false, price: 99,
+            screen: 'none', skill: 'beginner', btc_only: false, price: 160,
             desc: "Bague de paiement/accès crypto. Céramique & Puce EAL6+."
         }
     ],

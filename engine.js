@@ -546,7 +546,7 @@ function calculateResults() {
         // Car s'il veut signer en mobilité, le wallet doit être compatible.
         if (hasIos && skill === 'beginner' && !w.features.includes('ble')) {
              // Exception pour les wallets AirGap QR Code faciles
-             if(!['keystone3','jade_plus','jade'].includes(w.id)) return false;
+             if(!['keystone3','jade_plus','bitkey'].includes(w.id)) return false;
         }
         
         // No-KYC : On veut de l'Open Source (Bitkey accepté car hardware 'dummy')
