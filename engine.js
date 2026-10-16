@@ -546,7 +546,7 @@ function calculateResults() {
         // Car s'il veut signer en mobilité, le wallet doit être compatible.
         if (hasIos && skill === 'beginner' && !w.features.includes('ble')) {
              // Exception pour les wallets AirGap QR Code faciles
-             if(!['keystone3','jade_plus','jade','coldcard_q1'].includes(w.id)) return false;
+             if(!['keystone3','jade_plus','bitkey'].includes(w.id)) return false;
         }
         
         // No-KYC : On veut de l'Open Source (Bitkey accepté car hardware 'dummy')
@@ -567,7 +567,7 @@ function calculateResults() {
         if (skill === 'expert' && w.skill === 'expert') score += 20;
 
         // Bonus Features
-        if (isMultisig && (w.id === 'coldcard_q1' || w.id === 'seedsigner' || w.id === 'bitbox02')) score += 30; // Les rois du multisig
+        if (isMultisig && (w.id === 'seedsigner' || w.id === 'bitbox02')) score += 30; // Les rois du multisig
         if (isShamir && w.features.includes('shamir')) score += 50;
         if (tier === '3' && w.features.includes('airgap')) score += 25; // Airgap valorisé pour Tier 3
 
@@ -1059,7 +1059,7 @@ function updateNetworkStatus() {
 function getDonationHtml() {
     // VOS ADRESSES
     const lnAddress = "mysecurebtc@blink.sv"; 
-    const btcAddress = "bc1qhfdmeshwsda6rc66gu3x6njpsgqp3avdkcm2ec"; 
+    const btcAddress = "bc1p92hz6mt5j4m6jfk5xfzg32czhvwyey9696f4mag23zndun6p9ess4le8sj"; 
     const xProfile = "https://x.com/dwidoo7";
 
     return `
@@ -1093,7 +1093,7 @@ function getDonationHtml() {
                     
                     <div class="flex flex-col items-center gap-3">
                         <div class="bg-white p-2 rounded-lg shadow-lg w-48 h-48 flex items-center justify-center">
-                            <img src="qr-lightning-MySecureBTC.jpeg" alt="Lightning QR" class="w-full h-full object-contain">
+                            <img src="qr-lightning-MySecureBTC.png" alt="Lightning QR" class="w-full h-full object-contain">
                         </div>
                         <button onclick="handleCopy(this, '${lnAddress}')" class="text-xs bg-yellow-500/10 hover:bg-yellow-500/20 text-yellow-500 border border-yellow-500/30 font-bold py-2 px-4 rounded transition-all flex items-center gap-2">
                             <i class="fa-solid fa-bolt"></i> ${T.don_copy_ln}
