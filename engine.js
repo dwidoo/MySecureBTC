@@ -546,7 +546,7 @@ function calculateResults() {
         // Car s'il veut signer en mobilité, le wallet doit être compatible.
         if (hasIos && skill === 'beginner' && !w.features.includes('ble')) {
              // Exception pour les wallets AirGap QR Code faciles
-             if(!['keystone3','jade_plus','jade','coldcard_q1'].includes(w.id)) return false;
+             if(!['keystone3','jade_plus','jade'].includes(w.id)) return false;
         }
         
         // No-KYC : On veut de l'Open Source (Bitkey accepté car hardware 'dummy')
@@ -567,7 +567,7 @@ function calculateResults() {
         if (skill === 'expert' && w.skill === 'expert') score += 20;
 
         // Bonus Features
-        if (isMultisig && (w.id === 'coldcard_q1' || w.id === 'seedsigner' || w.id === 'bitbox02')) score += 30; // Les rois du multisig
+        if (isMultisig && (w.id === 'seedsigner' || w.id === 'bitbox02')) score += 30; // Les rois du multisig
         if (isShamir && w.features.includes('shamir')) score += 50;
         if (tier === '3' && w.features.includes('airgap')) score += 25; // Airgap valorisé pour Tier 3
 

@@ -122,7 +122,7 @@ const KB = {
             
             // NOUVEAU
             proc_solo_multisig: "Multisig Solo (Isolation Géographique)",
-            proc_solo_multisig_desc: "Utilisez 3 hardwares de marques différentes ou identiques (ex: Coldcard). Générez 3 seeds distincts. Stockez-les : 1 chez vous, 1 au coffre, 1 chez un tiers passif. Aucun tiers de confiance n'est requis pour la sécurité, juste pour le stockage.",
+            proc_solo_multisig_desc: "Utilisez 3 hardwares de marques différentes ou identiques. Générez 3 seeds distincts. Stockez-les : 1 chez vous, 1 au coffre, 1 chez un tiers passif. Aucun tiers de confiance n'est requis pour la sécurité, juste pour le stockage.",
             
             proc_multisig: "Sauvegarde des Descripteurs",
             proc_multisig_desc: "CRITIQUE : En Multisig, sauvegarder les mots ne suffit pas. Vous devez impérativement sauvegarder le fichier de configuration (XPUBS + Derivation Paths) de tous les participants.",
@@ -242,7 +242,6 @@ const KB = {
             // Clés construites sur : 'desc_' + id_wallet et 'mat_' + id_metal
             
             // WALLETS
-            desc_coldcard_q1: "Station AirGap ultime. Clavier QWERTY complet.",
             desc_trezor_safe7: "Standard 2025. Haptic Touch & Puce Transparente.",
             desc_ledger_flex: "Écran E-Ink sécurisé. Lisibilité parfaite.",
             desc_ledger_nanox: "Format clé USB discret. Standard Bluetooth éprouvé.",
@@ -570,7 +569,6 @@ const KB = {
             footer_github: "Source Code (GitHub)",
 
             // WALLETS
-            desc_coldcard_q1: "Ultimate AirGap Station. Full QWERTY keyboard.",
             desc_trezor_safe7: "2025 Standard. Haptic Touch & Transparent Chip.",
             desc_ledger_flex: "Secure E-Ink screen. Perfect readability.",
             desc_ledger_nanox: "Discreet USB key format. Proven Bluetooth standard.",
@@ -652,12 +650,6 @@ const KB = {
     
     // BASE DE DONNÉES PRODUITS
     WALLETS: [
-        { 
-            id: 'coldcard_q1', name: 'Coldcard Q1', 
-            features: ['airgap', 'keyboard', 'stealth', 'btc_only', 'dice', 'opensource', 'secure_element', 'nfc', 'tor', 'qr', 'usb_c'], 
-            screen: 'mid', skill: 'intermediate', btc_only: true, price: 199,
-            desc: "Station AirGap ultime. Clavier QWERTY complet."
-        },
         { 
             id: 'trezor_safe7', name: 'Trezor Safe 7', 
             features: ['opensource', 'tactile', 'shamir', 'ble', 'btc_only_opt', 'secure_element', 'tor', 'nfc', 'dice', 'usb_c'], 
